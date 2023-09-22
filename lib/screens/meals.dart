@@ -1,11 +1,13 @@
+// @author: Amir Armion
+// @version: V.01
+
 import 'package:flutter/material.dart';
 import 'package:meals/models/meal.dart';
 import 'package:meals/widgets/meal_item.dart';
 import 'package:meals/screens/meal_details.dart';
 
 class MealsScreen extends StatelessWidget {
-  const MealsScreen(this.title, this.meals,
-      {super.key});
+  const MealsScreen(this.title, this.meals, {super.key});
 
   final String? title;
   final List<Meal> meals;
@@ -26,7 +28,10 @@ class MealsScreen extends StatelessWidget {
     Widget content = ListView.builder(
       itemCount: meals.length,
       itemBuilder: (ctx, index) {
-        return MealItem(meals[index], selectedMeal);
+        return MealItem(
+          meals[index],
+          selectedMeal,
+        );
       },
     );
 

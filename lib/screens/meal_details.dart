@@ -1,3 +1,6 @@
+// @author: Amir Armion
+// @version: V.01
+
 import 'package:flutter/material.dart';
 import 'package:meals/models/meal.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -40,8 +43,8 @@ class MealDetailsScreen extends ConsumerWidget {
                 transitionBuilder: (child, animation) {
                   return RotationTransition(
                     turns: Tween(
-                      begin: 0.5,
-                      end: 0.7,
+                      begin: 0.8,
+                      end: 0.9,
                     ).animate(animation),
                     child: child,
                   );
@@ -59,11 +62,14 @@ class MealDetailsScreen extends ConsumerWidget {
           padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
           child: Column(
             children: [
-              Image.network(
-                meal.imageUrl,
-                height: 300,
-                width: double.infinity,
-                fit: BoxFit.cover,
+              Hero(
+                tag: meal.id,
+                child: Image.network(
+                  meal.imageUrl,
+                  height: 300,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
               const SizedBox(
                 height: 15,

@@ -1,3 +1,6 @@
+// @author: Amir Armion
+// @version: V.01
+
 enum Complexity { simple, challenging, hard }
 
 enum Affordability { affordable, pricey, luxurious }
