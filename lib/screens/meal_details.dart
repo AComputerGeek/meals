@@ -31,13 +31,26 @@ class MealDetailsScreen extends ConsumerWidget {
                     content: Text(
                       wasAdded ? 'Meal added as a favorite!' : 'Meal removed!',
                     ),
-                    duration: const Duration(seconds: 4),
+                    duration: const Duration(seconds: 2),
                   ),
                 );
               },
-              icon: Icon(
-                isFavorite ? Icons.star : Icons.star_border,
-                color: const Color.fromARGB(255, 255, 230, 0),
+              icon: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 500),
+                transitionBuilder: (child, animation) {
+                  return RotationTransition(
+                    turns: Tween(
+                      begin: 0.5,
+                      end: 0.7,
+                    ).animate(animation),
+                    child: child,
+                  );
+                },
+                child: Icon(
+                  isFavorite ? Icons.star : Icons.star_border,
+                  color: const Color.fromARGB(255, 255, 230, 0),
+                  key: ValueKey(isFavorite),
+                ),
               ),
             ),
           ],
