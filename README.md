@@ -2,6 +2,14 @@
 
 A new Flutter project.
 
+## Demo:
+
+
+
+https://github.com/AComputerGeek/meals/assets/107828537/2ba9fb86-e26b-4b2c-b912-4342ff8017bc
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
